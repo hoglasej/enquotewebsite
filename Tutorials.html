@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorials — EnQuote</title>
+  <meta name="description" content="Step-by-step EnQuote tutorials — set up your account, create quotations and variation orders, manage projects, and more. Watch right here." />
+  <link rel="icon" type="image/png" href="assets/enquote-logo.png" />
+  <link rel="canonical" href="https://enquote.io/Tutorials.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnQuote" />
+  <meta property="og:title" content="Tutorials — EnQuote" />
+  <meta property="og:description" content="Step-by-step EnQuote tutorials — set up your account, create quotations and variation orders, manage projects, and more. Watch right here." />
+  <meta property="og:url" content="https://enquote.io/Tutorials.html" />
+  <meta property="og:image" content="https://enquote.io/wp-content/uploads/2025/01/1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tutorials — EnQuote" />
+  <meta name="twitter:description" content="Step-by-step EnQuote tutorials — set up your account, create quotations and variation orders, manage projects, and more. Watch right here." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnQuote","url":"https://enquote.io/","logo":"https://enquote.io/assets/enquote-logo.png","description":"The go-to ERP to scale renovation & service businesses in Singapore.","email":"hello@leaptech.sg","telephone":"+6584955583","address":{"@type":"PostalAddress","addressCountry":"SG"},"sameAs":["https://www.instagram.com/enquote_io","https://www.facebook.com/"]}</script>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="js/icons.jsx"></script>
+  <script type="text/babel" src="js/site.jsx"></script>
+  <script type="text/babel" src="js/pages.jsx"></script>
+  <script type="text/babel" src="js/docs-data.jsx"></script>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function slugFromHash() {
+      const h = (location.hash || "").replace(/^#/, "");
+      return TUTORIALS.find((t) => t.slug === h) ? h : TUTORIALS[0].slug;
+    }
+
+    function Article({ t }) {
+      return (
+        <article className="docs-content">
+          <Crumb trail={[["Resources", "Resources.html"], ["Tutorials", "Tutorials.html"], [t.title]]} />
+          <div className="doc-cat-tag">{t.cat}</div>
+          <h1 className="doc-title">{t.title}</h1>
+          {t.read && <div className="doc-read">{Ic.play({ size: 14 })} {t.read} read</div>}
+          {t.intro && <p style={{ color: "var(--ink-soft)", fontSize: "1.08rem", marginBottom: "1.6rem", maxWidth: "60ch" }}>{t.intro}</p>}
+
+          {t.type === "video" && (
+            <video className="doc-video" src={t.video} controls playsInline preload="metadata"></video>
+          )}
+
+          {t.type === "steps" && (
+            <div className="doc-steps">
+              {t.steps.map((s, i) => (
+                <div className="doc-step" key={i}>
+                  <div className="doc-step-n">{i + 1}</div>
+                  <div className="doc-step-body">
+                    <p>{s.text}</p>
+                    {s.img && <img src={s.img} alt={"Step " + (i + 1)} />}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {t.type === "pending" && (
+            <div className="doc-pending">
+              <span className="dp-ic">{Ic.play({ size: 24 })}</span>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: 700 }}>This tutorial is being added here</h3>
+              <p>We're bringing this guide on-site. In the meantime, you can watch it in our docs — it opens in a new tab.</p>
+              <a className="btn btn-primary" href={t.src} target="_blank" rel="noopener">Watch this tutorial {Ic.arrowUpRight({ size: 16 })}</a>
+            </div>
+          )}
+        </article>
+      );
+    }
+
+    function Tutorials() {
+      const [slug, setSlug] = useState(slugFromHash());
+      useEffect(() => {
+        const on = () => setSlug(slugFromHash());
+        window.addEventListener("hashchange", on);
+        return () => window.removeEventListener("hashchange", on);
+      }, []);
+      const go = (s) => { location.hash = s; setSlug(s); window.scrollTo({ top: 0, behavior: "smooth" }); };
+
+      const idx = TUTORIALS.findIndex((t) => t.slug === slug);
+      const t = TUTORIALS[idx];
+      const prev = TUTORIALS[idx - 1];
+      const next = TUTORIALS[idx + 1];
+
+      return (
+        <Page>
+          <section className="phero" style={{ paddingBottom: "1rem" }}>
+            <div className="wrap">
+              <div className="eyebrow phero-eyebrow" style={{ marginBottom: "0.6rem" }}>Tutorials</div>
+              <h1 className="phero-title" style={{ fontSize: "clamp(2rem,1.5rem+2vw,3rem)" }}>EnQuote tutorials</h1>
+              <p className="phero-sub">Short, practical how-tos for every role — watch them right here, no jumping around.</p>
+            </div>
+          </section>
+
+          <section className="sec" style={{ paddingTop: "1.4rem" }}>
+            <div className="wrap docs-wrap">
+              <aside className="docs-side">
+                {TUTORIAL_CATS.map((cat) => (
+                  <div className="docs-cat" key={cat}>
+                    <div className="docs-cat-label">{cat}</div>
+                    {TUTORIALS.filter((x) => x.cat === cat).map((x) => (
+                      <button key={x.slug} className={"docs-link" + (x.slug === slug ? " on" : "")} onClick={() => go(x.slug)}>
+                        <span className="dl-ic">{x.type === "video" ? Ic.play({ size: 15 }) : x.type === "steps" ? Ic.doc({ size: 15 }) : Ic.doc({ size: 15 })}</span>
+                        {x.title}
+                      </button>
+                    ))}
+                  </div>
+                ))}
+              </aside>
+
+              <div>
+                <Article t={t} />
+                <div className="doc-nav">
+                  {prev ? (
+                    <a className="prev" href={"#" + prev.slug} onClick={(e) => { e.preventDefault(); go(prev.slug); }}>
+                      <span className="dn-label">← Previous</span><span className="dn-title">{prev.title}</span>
+                    </a>
+                  ) : <span></span>}
+                  {next ? (
+                    <a className="next" href={"#" + next.slug} onClick={(e) => { e.preventDefault(); go(next.slug); }}>
+                      <span className="dn-label">Next →</span><span className="dn-title">{next.title}</span>
+                    </a>
+                  ) : <span></span>}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <PageCTA title="Still stuck? We're one message away." sub="Reach our team on WhatsApp or book a demo and we'll walk you through it." />
+        </Page>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Tutorials />);
+  </script>
+</body>
+</html>

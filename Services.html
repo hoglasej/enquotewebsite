@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — EnQuote</title>
+  <meta name="description" content="EnQuote's services for renovation & service firms: customer management, project documents and e-signatures, and cashflow analysis — one connected ERP." />
+  <link rel="icon" type="image/png" href="assets/enquote-logo.png" />
+  <link rel="canonical" href="https://enquote.io/Services.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnQuote" />
+  <meta property="og:title" content="Services — EnQuote" />
+  <meta property="og:description" content="EnQuote's services for renovation &amp; service firms: customer management, project documents and e-signatures, and cashflow analysis — one connected ERP." />
+  <meta property="og:url" content="https://enquote.io/Services.html" />
+  <meta property="og:image" content="https://enquote.io/wp-content/uploads/2025/01/1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services — EnQuote" />
+  <meta name="twitter:description" content="EnQuote's services for renovation &amp; service firms: customer management, project documents and e-signatures, and cashflow analysis — one connected ERP." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnQuote","url":"https://enquote.io/","logo":"https://enquote.io/assets/enquote-logo.png","description":"The go-to ERP to scale renovation & service businesses in Singapore.","email":"hello@leaptech.sg","telephone":"+6584955583","address":{"@type":"PostalAddress","addressCountry":"SG"},"sameAs":["https://www.instagram.com/enquote_io","https://www.facebook.com/"]}</script>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="js/icons.jsx"></script>
+  <script type="text/babel" src="js/site.jsx"></script>
+  <script type="text/babel" src="js/productui.jsx"></script>
+  <script type="text/babel" src="js/pages.jsx"></script>
+  <script type="text/babel">
+    const SERVICES = [
+      { icon: "leads", t: "Customer Management", href: "Customer Management.html",
+        d: "Capture and distribute leads, keep every client record and conversation in one CRM built for ID sales.",
+        points: ["WhatsApp & web lead capture", "Fair lead distribution", "Full client history"] },
+      { icon: "doc", t: "Projects Document", href: "Projects Document.html",
+        d: "Digital folders, customisable forms and e-signatures keep every project document organised and signed off.",
+        points: ["Digital project folders", "Custom forms & templates", "Legally-binding e-signatures"] },
+      { icon: "cash", t: "Cashflow Analysis", href: "Cashflow Analysis.html",
+        d: "Track costs, purchasing and margins in real time, with two-way sync to Xero and QuickBooks.",
+        points: ["Real-time cost tracking", "Purchase orders & suppliers", "Xero & QuickBooks sync"] },
+    ];
+
+    function ServiceCards() {
+      return (
+        <section className="sec">
+          <div className="wrap">
+            <SectionHead center eyebrow="What we cover" title="Three connected services, one platform"
+              lead="Each works on its own — together they run your whole operation." />
+            <div className="fgrid" style={{ marginTop: "2.4rem" }}>
+              {SERVICES.map((s) => (
+                <a className="cap-card" href={s.href} key={s.t} style={{ display: "flex", flexDirection: "column" }}>
+                  <span className="cap-ic">{Ic[s.icon]({ size: 22 })}</span>
+                  <h3 className="cap-t">{s.t}</h3>
+                  <p className="cap-d">{s.d}</p>
+                  <ul className="frow-points" style={{ margin: "1rem 0 1.2rem" }}>
+                    {s.points.map((p) => <li key={p} style={{ fontSize: "0.92rem" }}><span className="pp-check">{Ic.check({ size: 13, stroke: 2.6 })}</span>{p}</li>)}
+                  </ul>
+                  <span className="pillar-link" style={{ marginTop: "auto" }}>Explore {s.t} {Ic.arrowUpRight({ size: 16 })}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function ServicesPage() {
+      return (
+        <Page>
+          <PageHero
+            crumb={[["Services"]]}
+            eyebrow="One platform"
+            title={<>Everything your firm runs on, in one platform.</>}
+            sub="From the first lead to the final reconciled invoice, EnQuote's services connect the work your team does every day — no more juggling tools."
+            visual={<HeroDashboard />}
+          />
+          <StatBand band stats={[
+            { value: "80+", label: "firms" },
+            { value: "1,000+", label: "users" },
+            { value: "3", label: "connected services" },
+            { value: "2-way", label: "accounting sync" },
+          ]} />
+          <ServiceCards />
+          <Steps band eyebrow="How it fits together" title="One flow, end to end"
+            steps={[
+              { t: "Lead in", d: "Enquiries land from WhatsApp and web, distributed automatically." },
+              { t: "Quote & sign", d: "Build an error-free quote and send it for e-signature." },
+              { t: "Deliver", d: "Track the project stage-by-stage with live cost control." },
+              { t: "Reconcile", d: "Invoices and purchases sync straight to your books." },
+            ]} />
+          <PageCTA title="See the whole platform in action." />
+        </Page>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<ServicesPage />);
+  </script>
+</body>
+</html>

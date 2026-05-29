@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Insights — EnQuote</title>
+  <meta name="description" content="Practical articles on quoting, operations and finance for Singapore interior design firms and renovation contractors." />
+  <link rel="icon" type="image/png" href="assets/enquote-logo.png" />
+  <link rel="canonical" href="https://enquote.io/Daily%20Insights.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnQuote" />
+  <meta property="og:title" content="Daily Insights — EnQuote" />
+  <meta property="og:description" content="Practical articles on quoting, operations and finance for Singapore interior design firms and renovation contractors." />
+  <meta property="og:url" content="https://enquote.io/Daily%20Insights.html" />
+  <meta property="og:image" content="https://enquote.io/wp-content/uploads/2025/01/1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Daily Insights — EnQuote" />
+  <meta name="twitter:description" content="Practical articles on quoting, operations and finance for Singapore interior design firms and renovation contractors." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnQuote","url":"https://enquote.io/","logo":"https://enquote.io/assets/enquote-logo.png","description":"The go-to ERP to scale renovation & service businesses in Singapore.","email":"hello@leaptech.sg","telephone":"+6584955583","address":{"@type":"PostalAddress","addressCountry":"SG"},"sameAs":["https://www.instagram.com/enquote_io","https://www.facebook.com/"]}</script>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="js/icons.jsx"></script>
+  <script type="text/babel" src="js/site.jsx"></script>
+  <script type="text/babel" src="js/productui.jsx"></script>
+  <script type="text/babel" src="js/pages.jsx"></script>
+  <script type="text/babel">
+    const { useState } = React;
+    const CATS = ["All", "Quoting", "Operations", "Finance", "Growth"];
+    const IMG = (kw, n) => `https://loremflickr.com/800/600/${kw}?lock=${n}`;
+    const ALL = [
+      { cat: "Quoting", t: "Five quoting mistakes that quietly kill your margin", d: "The small pricing slips that add up across a year of project work.", meta: "6 min read", img: IMG("interior,modern", 21) },
+      { cat: "Operations", t: "From WhatsApp chaos to one source of truth", d: "How growing firms move off scattered chats without slowing down.", meta: "5 min read", img: IMG("office,workspace", 22) },
+      { cat: "Finance", t: "What healthy cashflow looks like for a service firm", d: "A practical look at tracking costs and margin on every project.", meta: "7 min read", img: IMG("livingroom,interior", 23) },
+      { cat: "Growth", t: "Hiring your first sales lead? Read this first", d: "How to structure commissions so the numbers stay fair and motivating.", meta: "8 min read", img: IMG("interior,studio", 24) },
+      { cat: "Quoting", t: "Building a price book your team will actually use", d: "Structuring rates so quotes are fast, consistent and accurate.", meta: "6 min read", img: IMG("kitchen,modern", 25) },
+      { cat: "Operations", t: "The handover checklist that saves you callbacks", d: "A simple defect and handover process that protects your reputation.", meta: "4 min read", img: IMG("apartment,interior", 26) },
+      { cat: "Finance", t: "Reconciling without the month-end scramble", d: "Why two-way accounting sync changes how firms close the books.", meta: "5 min read", img: IMG("interior,minimal", 27) },
+      { cat: "Growth", t: "Turning happy clients into a referral engine", d: "Practical ways firms keep their pipeline full from word of mouth.", meta: "6 min read", img: IMG("interior,luxury", 28) },
+    ];
+    function Listing() {
+      const [cat, setCat] = useState("All");
+      const posts = cat === "All" ? ALL : ALL.filter((p) => p.cat === cat);
+      const [feat, ...rest] = ALL;
+      return (
+        <section className="sec" style={{ paddingTop: "1rem" }}>
+          <div className="wrap">
+            <a className="post" href="#" style={{ flexDirection: "row", marginBottom: "2rem" }}>
+              <div className="post-thumb" style={{ flex: "0 0 46%", aspectRatio: "auto" }}><img src={feat.img} alt="" /><span className="post-cat">Featured · {feat.cat}</span></div>
+              <div className="post-body" style={{ justifyContent: "center", padding: "clamp(1.2rem,3vw,2.2rem)" }}>
+                <h3 style={{ fontSize: "1.5rem" }}>{feat.t}</h3>
+                <p style={{ fontSize: "1.02rem" }}>{feat.d}</p>
+                <span className="post-meta">{feat.meta}</span>
+              </div>
+            </a>
+            <div className="pui-chips" style={{ marginBottom: "1.6rem", gap: "0.5rem" }}>
+              {CATS.map((c) => (
+                <button key={c} onClick={() => setCat(c)} className="btn"
+                  style={{ padding: "0.5rem 1rem", fontSize: "0.9rem",
+                    background: cat === c ? "var(--brand)" : "var(--surface)",
+                    color: cat === c ? "var(--brand-on)" : "var(--ink-soft)",
+                    border: "1px solid " + (cat === c ? "transparent" : "var(--line-strong)") }}>{c}</button>
+              ))}
+            </div>
+            <div className="posts">
+              {posts.map((p) => (
+                <a className="post" href="#" key={p.t}>
+                  <div className="post-thumb"><img src={p.img} alt="" /><span className="post-cat">{p.cat}</span></div>
+                  <div className="post-body">
+                    <h3>{p.t}</h3>
+                    <p>{p.d}</p>
+                    <span className="post-meta">{p.meta}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+    function Pg() {
+      return (
+        <Page>
+          <PageHero solo
+            crumb={[["Resources", "Resources.html"], ["Daily Insights"]]}
+            eyebrow="The blog"
+            title={<>Practical ideas for running a sharper studio.</>}
+            sub="Short reads on quoting, operations, finance and growth — written for Singapore interior design firms and renovation contractors."
+            secondary={{ label: "Talk to us", href: "Contact Us.html", icon: false }}
+          />
+          <Listing />
+          <PageCTA title="Put these ideas into practice." sub="See how EnQuote turns better process into faster quotes and healthier margins." />
+        </Page>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Pg />);
+  </script>
+</body>
+</html>

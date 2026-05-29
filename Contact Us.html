@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — EnQuote</title>
+  <meta name="description" content="Talk to the EnQuote team — chat on WhatsApp, email hello@leaptech.sg, or send us a message." />
+  <link rel="icon" type="image/png" href="assets/enquote-logo.png" />
+  <link rel="canonical" href="https://enquote.io/Contact%20Us.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnQuote" />
+  <meta property="og:title" content="Contact Us — EnQuote" />
+  <meta property="og:description" content="Talk to the EnQuote team — chat on WhatsApp, email hello@leaptech.sg, or send us a message." />
+  <meta property="og:url" content="https://enquote.io/Contact%20Us.html" />
+  <meta property="og:image" content="https://enquote.io/wp-content/uploads/2025/01/1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Us — EnQuote" />
+  <meta name="twitter:description" content="Talk to the EnQuote team — chat on WhatsApp, email hello@leaptech.sg, or send us a message." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnQuote","url":"https://enquote.io/","logo":"https://enquote.io/assets/enquote-logo.png","description":"The go-to ERP to scale renovation & service businesses in Singapore.","email":"hello@leaptech.sg","telephone":"+6584955583","address":{"@type":"PostalAddress","addressCountry":"SG"},"sameAs":["https://www.instagram.com/enquote_io","https://www.facebook.com/"]}</script>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="js/icons.jsx"></script>
+  <script type="text/babel" src="js/site.jsx"></script>
+  <script type="text/babel" src="js/productui.jsx"></script>
+  <script type="text/babel" src="js/pages.jsx"></script>
+  <script type="text/babel">
+    const { useState } = React;
+    function ContactForm() {
+      const [sent, setSent] = useState(false);
+      const [waUrl, setWaUrl] = useState("");
+      const [err, setErr] = useState({});
+      const submit = (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const next = {};
+        if (!f.name.value.trim()) next.name = true;
+        if (!/^\S+@\S+\.\S+$/.test(f.email.value)) next.email = true;
+        if (!f.need.value) next.need = true;
+        setErr(next);
+        if (Object.keys(next).length) return;
+        const data = Object.fromEntries(new FormData(f).entries());
+        data._form = "Contact enquiry";
+        setWaUrl(sendViaWhatsApp(data));
+        setSent(true);
+      };
+      if (sent) return (
+        <div className="form-success" style={{ flexDirection: "column", alignItems: "flex-start", gap: "0.8rem" }}>
+          <span>{Ic.whatsapp({ size: 22 })} Opening WhatsApp with your details — just tap send in the chat.</span>
+          <a className="btn btn-primary" href={waUrl} target="_blank" rel="noopener">{Ic.whatsapp({ size: 18 })} Open WhatsApp chat</a>
+        </div>
+      );
+      return (
+        <form className="form-card" onSubmit={submit} noValidate>
+          <div className="field-row">
+            <div className="field"><label>Name</label><input name="name" placeholder="Your name" style={err.name ? { borderColor: "var(--accent)" } : null} /></div>
+            <div className="field"><label>Company</label><input name="company" placeholder="Company name" /></div>
+          </div>
+          <div className="field"><label>Work email</label><input name="email" type="email" placeholder="you@company.com" style={err.email ? { borderColor: "var(--accent)" } : null} /></div>
+          <div className="field"><label>How can we help?</label>
+            <select name="need" defaultValue="" style={err.need ? { borderColor: "var(--accent)" } : null}>
+              <option value="" disabled>Select what best fits…</option>
+              <option>Track profit on every quote</option>
+              <option>Increase quotation output without hiring</option>
+              <option>Gain full visibility over sales &amp; project progress</option>
+              <option>Automate and scale my sales workflow</option>
+              <option>Not sure yet — just exploring</option>
+            </select>
+          </div>
+          <button className="btn btn-primary btn-lg" type="submit" style={{ width: "100%", justifyContent: "center" }}>{Ic.whatsapp({ size: 18 })} Send on WhatsApp</button>
+        </form>
+      );
+    }
+    function Pg() {
+      return (
+        <Page>
+          <PageHero solo
+            crumb={[["Contact Us"]]}
+            eyebrow="Get in touch"
+            title={<>Let's talk about your firm.</>}
+            sub="Questions about EnQuote, pricing, or whether it fits your workflow? We're quick to reply — pick whichever way suits you."
+            primary={{ label: "Request a demo", href: DEMO }}
+          />
+          <section className="sec" style={{ paddingTop: "0.5rem" }}>
+            <div className="wrap form-grid">
+              <ContactForm />
+              <div className="form-aside">
+                <div className="contact-line"><span className="cl-ic">{Ic.whatsapp({ size: 20 })}</span><div><b>WhatsApp</b><a href={SITE_WA} target="_blank" rel="noopener">Chat now · {SITE_PHONE}</a></div></div>
+                <div className="contact-line"><span className="cl-ic">{Ic.chat({ size: 20 })}</span><div><b>Email</b><a href={"mailto:" + SITE_EMAIL}>{SITE_EMAIL}</a></div></div>
+                <div className="contact-line"><span className="cl-ic">{Ic.gauge({ size: 20 })}</span><div><b>Book a demo</b><a href={DEMO}>30-minute walkthrough</a></div></div>
+                <div className="contact-line"><span className="cl-ic">{Ic.team({ size: 20 })}</span><div><b>Built by Leaptechnology</b><span>Singapore</span></div></div>
+                <div className="card" style={{ padding: "1.2rem", marginTop: "0.4rem" }}>
+                  <p style={{ fontSize: "0.95rem", color: "var(--ink-soft)" }}>Trusted by <b style={{ color: "var(--ink)" }}>80+</b> renovation & service firms and <b style={{ color: "var(--ink)" }}>1,000+</b> users across Singapore.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <PageCTA title="Prefer to see it first?" sub="Book a free 30-minute demo and we'll map EnQuote to how your firm works today." />
+        </Page>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Pg />);
+  </script>
+</body>
+</html>

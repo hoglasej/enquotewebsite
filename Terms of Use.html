@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — EnQuote</title>
+  <meta name="description" content="EnQuote Terms of Use — Leaptechnology Pte Ltd." />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="js/icons.jsx"></script>
+  <script type="text/babel" src="js/site.jsx"></script>
+  <script type="text/babel" src="js/pages.jsx"></script>
+  <script type="text/babel">
+    const SECTIONS = [
+      { t: "1. Acceptance of Terms", c: [
+        "By accessing or using EnQuote, you confirm that you have read, understood, and agree to be bound by these Terms of Use (\u201cTerms\u201d). If you are accepting these Terms on behalf of a company or organisation, you represent and warrant that you have the authority to bind that entity to these Terms.",
+        "These Terms are updated from time to time. Continued use of EnQuote following notification of an update constitutes acceptance of the revised Terms. Users will be notified of updates upon login when changes are made.",
+        "If you do not agree to these Terms, you must immediately cease using EnQuote and contact us at support@leaptech.sg.",
+      ] },
+      { t: "2. Eligibility and Account Registration", c: [
+        "EnQuote is intended for use by individuals who are 15 years of age or older. By using EnQuote, you represent and warrant that you meet this age requirement.",
+        "To access EnQuote, you must register for an account. You agree to:",
+        ["Provide accurate, current, and complete information during registration",
+         "Maintain and promptly update your account information to keep it accurate and complete",
+         "Maintain the confidentiality of your account credentials including your username and password",
+         "Accept responsibility for all activities that occur under your account",
+         "Notify Leaptech immediately at support@leaptech.sg if you suspect any unauthorised use of your account or any other breach of security"],
+        "Leaptech reserves the right to refuse registration, suspend, or terminate any account at its sole discretion.",
+      ] },
+      { t: "3. Definitions", c: [
+        "\u201cUsers\u201d means individuals fifteen years or older who are authorised to access and use EnQuote under a valid Subscription.",
+        "\u201cEnQuote\u201d means the cloud-based business management suite productivity application provided by Leaptechnology Pte Ltd and the underlying servers and software used to provide such application.",
+        "\u201cLeaptech\u201d means Leaptechnology Pte Ltd, a Singapore corporation and service provider of the EnQuote application.",
+        "\u201cUser Data\u201d refers to any personally identifiable information input by Users into EnQuote in the normal course of usage.",
+        "\u201cSubscription\u201d means the right to access EnQuote during the agreed term.",
+        "\u201cOffice Hours\u201d means Monday to Friday, 9:00am to 6:00pm Singapore Standard Time, excluding Singapore public holidays.",
+        "\u201cContent\u201d means any data, text, information, documents, graphics, or other materials uploaded, submitted, or generated through EnQuote by Users.",
+      ] },
+      { t: "4. Use of EnQuote", c: [
+        "EnQuote is provided as a software tool to facilitate and streamline business operations including quotation generation, sales management, invoicing, and customer relationship management.",
+        "Users agree to use EnQuote only for lawful purposes and in accordance with these Terms. Users must not use EnQuote in any way that breaches applicable laws or regulations, is fraudulent, or causes harm to Leaptech or third parties.",
+        "Leaptech reserves the right to suspend or terminate access to EnQuote with immediate effect if a User is found to be acting inconsistently with these Terms or engaging in fraudulent, immoral, or illegal activities.",
+      ] },
+      { t: "5. Prohibited Uses", c: [
+        "You agree not to use EnQuote to:",
+        ["Violate any applicable local, national, or international law or regulation",
+         "Transmit any unsolicited or unauthorised advertising or promotional material",
+         "Knowingly transmit any data or material that contains viruses, Trojan horses, worms, or any other malicious or harmful programs",
+         "Attempt to gain unauthorised access to any part of EnQuote, its servers, or any system or network connected to EnQuote",
+         "Interfere with or disrupt the integrity or performance of EnQuote or the data contained therein",
+         "Reverse engineer, decompile, disassemble, or attempt to derive the source code of EnQuote",
+         "Copy, modify, distribute, sell, or lease any part of EnQuote or its content without prior written consent from Leaptech",
+         "Use EnQuote to store or transmit infringing, libellous, or otherwise unlawful or tortious material",
+         "Impersonate any person or entity or falsely represent your affiliation with any person or entity",
+         "Use EnQuote in any manner that could damage, disable, overburden, or impair Leaptech\u2019s servers or networks"],
+      ] },
+      { t: "6. Reference Documents and System Records", c: [
+        "The Client acknowledges that printed or digital outputs generated through EnQuote, including but not limited to PDF documents, quotation printouts, invoices, credit notes, free-of-charge documents, Variation Orders, and any other system-generated reports or documents, are reference documents only and do not supersede the signed contractual documents or Leaptech\u2019s system records, which shall at all times serve as the sole authoritative and binding reference.",
+        "The Client further acknowledges that certain items may be calculated as bundled or aggregated amounts and may not appear as individual line items in any output. Neither discrepancies between outputs and system records, nor the absence of individually itemised amounts, shall constitute grounds for any claim, demand, or dispute against Leaptechnology Pte Ltd.",
+      ] },
+      { t: "7. Client Responsibilities", c: [
+        "The Client remains solely responsible for:",
+        ["Verifying the accuracy of all quotations, invoices, financial calculations, and business documents generated through EnQuote before presenting them to customers or third parties",
+         "All business decisions, quotations, pricing strategies, and commercial transactions made using EnQuote",
+         "Maintaining the confidentiality of EnQuote account credentials and all activities occurring under the account",
+         "All content created during usage of EnQuote including textual information, imagery, and audio recordings",
+         "Ensuring that their use of EnQuote complies with all applicable laws and regulations"],
+      ] },
+      { t: "8. Technical Support", c: [
+        "Leaptech\u2019s technical support obligations are limited to Office Hours. Leaptech shall not be obligated to respond to, act upon, or be bound by any support request received outside of Office Hours, including requests via telephone, WhatsApp, email, or any other channel.",
+        "Any response or assistance provided outside of Office Hours is made strictly on a goodwill basis at Leaptech\u2019s sole discretion and shall not:",
+        ["constitute a variation of Leaptech\u2019s support obligations",
+         "create any expectation or entitlement to future out-of-hours support; or",
+         "be construed as an acknowledgement of any urgency, liability, or obligation on Leaptech\u2019s part"],
+        "Repeated out-of-hours requests may, at Leaptech\u2019s discretion, be subject to additional charges at rates to be separately agreed in writing.",
+      ] },
+      { t: "9. Changes to the Service", c: [
+        "Leaptech reserves the right to modify, suspend, or discontinue EnQuote or any part thereof at any time, with or without notice. This includes adding, modifying, or removing features, functionality, or content.",
+        "Leaptech shall not be liable to you or any third party for any modification, suspension, or discontinuation of EnQuote or any part thereof, except as expressly provided in these Terms.",
+        "In the event of permanent discontinuation of EnQuote, Leaptech shall provide at least ninety (90) days\u2019 written notice to affected clients.",
+      ] },
+      { t: "10. Third Party Links and Services", c: [
+        "EnQuote may contain links to third party websites, services, or integrations that are not owned or controlled by Leaptech. Leaptech has no control over and assumes no responsibility for the content, privacy policies, or practices of any third party websites or services.",
+        "We strongly advise you to read the terms and conditions and privacy policies of any third party websites or services that you visit or use through EnQuote.",
+        "Leaptech shall not be liable for any loss or damage arising from your use of any third party websites, services, or integrations accessed through EnQuote.",
+      ] },
+      { t: "11. Indemnity", c: [
+        "The User agrees to indemnify and hold harmless Leaptechnology Pte Ltd, its subsidiaries, officers, directors, employees, and agents from any and all claims, losses, damages, liabilities, costs, and expenses (including reasonable legal fees) arising from or related to:",
+        ["The User\u2019s use of or inability to use EnQuote",
+         "The User\u2019s violation of these Terms or any applicable law or regulation",
+         "Any quotation losses, sales losses, lost business opportunities, pricing errors, calculation mistakes, or financial discrepancies arising from the use of EnQuote",
+         "Any claim by a third party arising out of the User\u2019s use of EnQuote",
+         "Any Content submitted, posted, or transmitted through EnQuote by the User",
+         "Any breach of the User\u2019s responsibilities as set out in Section 7"],
+        "This indemnity survives termination or expiration of these Terms.",
+      ] },
+      { t: "12. Disclaimer of Warranties", c: [
+        "EnQuote is provided on an \u201cas is\u201d and \u201cas available\u201d basis without warranties of any kind, either express or implied. Leaptech expressly disclaims all warranties including but not limited to:",
+        ["Implied warranties of merchantability, fitness for a particular purpose, and non-infringement",
+         "Any warranty that EnQuote will meet your requirements or be available on an uninterrupted, timely, secure, or error-free basis",
+         "Any warranty as to the accuracy, reliability, or completeness of any information obtained through EnQuote",
+         "Any warranty that defects in EnQuote will be corrected"],
+        "No advice or information, whether oral or written, obtained by you from Leaptech or through EnQuote shall create any warranty not expressly stated in these Terms.",
+        "Your use of EnQuote is at your sole risk.",
+      ] },
+      { t: "13. Limitation of Liability", c: [
+        "In no event shall Leaptechnology Pte Ltd, its subsidiaries, officers, or employees be liable, whether in contract, warranty, tort (including negligence), or any other form of liability for special, indirect, consequential, or incidental damages, including but not limited to loss of profits, revenues, data, or business opportunities, suffered as a result of the use of or inability to use EnQuote.",
+        "Leaptech shall not be liable for any damage suffered by the User arising from the use or inability to use EnQuote; messages received or transactions entered into through EnQuote; unauthorised access to or alteration of the User\u2019s transmissions or data; or any failure, interruption, error, or loss arising from third party services, integrations, platforms, or infrastructure used in connection with EnQuote, including cloud hosting providers, payment gateways, telecommunication services, or third party APIs.",
+        "Notwithstanding any other provision of these Terms, Leaptechnology Pte Ltd\u2019s total aggregate liability to the Client \u2014 whether in contract, tort (including negligence), breach of statutory duty, or otherwise \u2014 shall in no event exceed the total fees paid by the Client to Leaptechnology Pte Ltd in the three (3) calendar months immediately preceding the event giving rise to the claim. This cap applies to all claims in aggregate and not to each individual claim separately.",
+        "Nothing in these Terms is intended to exclude or restrict liability which cannot be limited or excluded by law.",
+      ] },
+      { t: "14. Intellectual Property", c: [
+        "All title, ownership, and intellectual property rights in and to EnQuote and all copies thereof are owned by Leaptechnology Pte Ltd. All rights are reserved. EnQuote is protected by copyright laws, international copyright treaties, and other applicable laws.",
+        "Unauthorised reproduction, modification, distribution, transmission, republication, display, or performance of EnQuote or any part thereof is strictly prohibited.",
+        "Nothing in these Terms grants you any right to use Leaptech\u2019s trade names, trademarks, service marks, logos, or domain names without our prior written consent.",
+      ] },
+      { t: "15. User Data and Privacy", c: [
+        "The collection, use, and protection of your personal data is governed by Leaptech\u2019s Privacy Policy, which forms part of these Terms. By using EnQuote, you agree to the terms of the Privacy Policy.",
+      ] },
+      { t: "16. Suspension and Termination", c: [
+        "Leaptech reserves the right to suspend or terminate your access to EnQuote at any time, with or without cause, and with or without notice. Grounds for suspension or termination include but are not limited to:",
+        ["Breach of these Terms", "Fraudulent, immoral, or illegal activity", "Non-payment of Subscription fees", "Actions that harm Leaptech, other users, or third parties"],
+        "If you wish to appeal a suspension or termination, please contact us at support@leaptech.sg within 14 days of receiving notice. Leaptech will review appeals at its sole discretion and its decision shall be final.",
+        "Upon termination, your right to use EnQuote ceases immediately. A 30-day grace period applies during which your account data may be recovered. Thereafter, your data will be archived or deleted in accordance with our Privacy Policy.",
+      ] },
+      { t: "17. Force Majeure", c: [
+        "Neither party shall be liable for failure to perform under these Terms resulting from causes beyond its reasonable control, including acts of God, acts of governmental authorities, terrorism, natural catastrophe, fire, flood, riot, war, or power failure.",
+      ] },
+      { t: "18. General", c: [
+        "These Terms constitute the entire agreement between the User and Leaptechnology Pte Ltd with respect to the use of EnQuote and supersede all prior understandings and agreements regarding the same subject matter.",
+        "Any claim or cause of action arising out of or related to the use of EnQuote must be filed within one (1) year after such claim or cause of action arose, or be forever barred.",
+        "If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.",
+        "Any waiver, alteration, or modification of these Terms shall not be valid unless in writing and signed by both parties. Leaptech\u2019s failure to enforce any right or provision of these Terms shall not be deemed a waiver of such right or provision.",
+        "Governing Law. These Terms shall be governed by and construed in accordance with the laws of the Republic of Singapore. Any dispute shall be subject to the exclusive jurisdiction of the courts of Singapore.",
+      ] },
+      { t: "19. Contact", c: [
+        "For any queries regarding these Terms, please contact Leaptechnology Pte Ltd at support@leaptech.sg.",
+      ] },
+    ];
+
+    function LegalBlock({ item }) {
+      return (
+        <>
+          <h2>{item.t}</h2>
+          {item.c.map((b, i) => Array.isArray(b)
+            ? <ul key={i}>{b.map((li, j) => <li key={j}>{li}</li>)}</ul>
+            : <p key={i}>{b}</p>)}
+        </>
+      );
+    }
+
+    function Pg() {
+      return (
+        <Page>
+          <section className="phero" style={{ paddingBottom: "1.6rem" }}>
+            <div className="wrap">
+              <Crumb trail={[["Terms of Use"]]} />
+              <h1 className="phero-title" style={{ fontSize: "clamp(2rem,1.5rem+2vw,3rem)" }}>Terms of Use</h1>
+              <p className="phero-sub">Leaptechnology Pte Ltd</p>
+            </div>
+          </section>
+          <section className="sec" style={{ paddingTop: "2.4rem" }}>
+            <div className="wrap legal">
+              <p className="updated">Last updated: 27 April 2026</p>
+              {SECTIONS.map((s) => <LegalBlock item={s} key={s.t} />)}
+            </div>
+          </section>
+          <PageCTA title="Questions about these terms?" sub="Reach our team and we'll be glad to help." />
+        </Page>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Pg />);
+  </script>
+</body>
+</html>

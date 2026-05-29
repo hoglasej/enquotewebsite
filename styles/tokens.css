@@ -1,0 +1,195 @@
+/* ============================================================
+   EnQuote — Design Tokens
+   Type: Schibsted Grotesk (UI/headlines) + JetBrains Mono (data)
+   Themes switched via [data-theme] on <html>
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
+
+:root {
+  /* ---- Type ---- */
+  --font-display: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-body: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'Newsreader', Georgia, serif;
+
+  /* type scale (fluid) */
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --step-1:  clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --step-2:  clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --step-3:  clamp(2rem, 1.6rem + 2vw, 3rem);
+  --step-4:  clamp(2.6rem, 2rem + 3vw, 4.4rem);
+  --step-5:  clamp(3.2rem, 2.2rem + 5vw, 6rem);
+
+  /* ---- Layout ---- */
+  --maxw: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===========  THEME: EnQuote Brand (amber + charcoal) — default  =========== */
+:root, [data-theme="brand"] {
+  --paper:        oklch(0.987 0.002 80);   /* near-white, faint warm gray */
+  --paper-2:      oklch(0.966 0.003 80);
+  --surface:      oklch(1 0 0);
+  --ink:          oklch(0.31 0.005 75);    /* charcoal (logo gray, darkened) */
+  --ink-soft:     oklch(0.47 0.005 75);
+  --ink-faint:    oklch(0.62 0.005 75);
+  --line:         oklch(0.9 0.004 80);
+  --line-strong:  oklch(0.84 0.005 80);
+
+  --brand:        oklch(0.34 0.006 75);    /* charcoal — primary actions */
+  --brand-deep:   oklch(0.26 0.006 75);
+  --brand-soft:   oklch(0.95 0.004 80);    /* light gray tint */
+  --brand-on:     oklch(0.99 0.002 85);
+
+  --accent:       oklch(0.78 0.142 73);    /* EnQuote amber */
+  --accent-deep:  oklch(0.6 0.13 62);      /* bronze (amber as text) */
+  --accent-soft:  oklch(0.95 0.05 82);     /* pale amber */
+
+  --ok:           oklch(0.6 0.09 160);
+  --warn:         oklch(0.72 0.13 70);
+}
+
+/* ===========  THEME: Warm (cream neutrals + amber)  =========== */
+[data-theme="warm"] {
+  --paper:        oklch(0.984 0.008 85);
+  --paper-2:      oklch(0.96 0.011 84);
+  --surface:      oklch(1 0 0);
+  --ink:          oklch(0.28 0.012 70);
+  --ink-soft:     oklch(0.45 0.011 70);
+  --ink-faint:    oklch(0.6 0.01 70);
+  --line:         oklch(0.9 0.008 84);
+  --line-strong:  oklch(0.83 0.01 82);
+
+  --brand:        oklch(0.3 0.014 65);     /* warm charcoal */
+  --brand-deep:   oklch(0.22 0.012 65);
+  --brand-soft:   oklch(0.95 0.012 75);
+  --brand-on:     oklch(0.99 0.004 80);
+
+  --accent:       oklch(0.77 0.145 70);    /* amber */
+  --accent-deep:  oklch(0.58 0.13 58);
+  --accent-soft:  oklch(0.95 0.05 78);
+
+  --ok:           oklch(0.58 0.09 160);
+  --warn:         oklch(0.72 0.13 70);
+}
+
+/* ===========  THEME: Cool (slate neutrals + amber)  =========== */
+[data-theme="cool"] {
+  --paper:        oklch(0.985 0.003 240);
+  --paper-2:      oklch(0.96 0.005 240);
+  --surface:      oklch(1 0 0);
+  --ink:          oklch(0.3 0.012 250);
+  --ink-soft:     oklch(0.46 0.011 250);
+  --ink-faint:    oklch(0.62 0.009 250);
+  --line:         oklch(0.9 0.006 245);
+  --line-strong:  oklch(0.84 0.008 245);
+
+  --brand:        oklch(0.33 0.018 255);   /* slate charcoal */
+  --brand-deep:   oklch(0.25 0.016 255);
+  --brand-soft:   oklch(0.95 0.008 250);
+  --brand-on:     oklch(0.99 0.003 250);
+
+  --accent:       oklch(0.78 0.142 73);    /* amber */
+  --accent-deep:  oklch(0.6 0.13 62);
+  --accent-soft:  oklch(0.95 0.05 82);
+
+  --ok:           oklch(0.6 0.09 175);
+  --warn:         oklch(0.72 0.13 70);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+/* ---- shared layout helpers ---- */
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: transform 0.15s var(--ease), background 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn-primary {
+  background: var(--brand); color: var(--brand-on);
+  box-shadow: 0 1px 2px oklch(0.2 0.01 75 / 0.22), 0 6px 18px oklch(0.2 0.01 75 / 0.16);
+}
+.btn-primary:hover { background: var(--brand-deep); box-shadow: 0 2px 4px oklch(0.2 0.01 75 / 0.28), 0 10px 28px oklch(0.2 0.01 75 / 0.2); transform: translateY(-1px); }
+.btn-wa {
+  background: var(--surface); color: var(--ink);
+  border-color: var(--line-strong);
+}
+.btn-wa:hover { border-color: var(--ink-faint); transform: translateY(-1px); box-shadow: 0 6px 18px oklch(0.3 0.02 75 / 0.08); }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { background: var(--paper-2); }
+
+/* ---- cards ---- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+/* NOTE: this preview engine freezes CSS animations at frame 0, so any
+   opacity:0 entrance renders invisible. Keep .reveal inert (always visible). */
+.reveal { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

@@ -1,0 +1,131 @@
+/* ============================================================
+   EnQuote — 3D hero visual (perspective scene + floating cards)
+   Static base tilt renders everywhere; JS adds mouse parallax.
+   ============================================================ */
+
+.hero-3d {
+  perspective: 2200px;
+  perspective-origin: 56% 32%;
+  overflow: visible;
+  filter: none;
+}
+
+.hero-3d-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(6deg) rotateY(-12deg);
+  transition: transform 0.3s var(--ease);
+  will-change: transform;
+}
+
+/* the dashboard panel itself */
+.hero-3d-stage {
+  border-radius: var(--radius);
+  box-shadow:
+    0 2px 6px oklch(0.3 0.01 75 / 0.06),
+    0 26px 50px -18px oklch(0.28 0.01 75 / 0.32),
+    0 50px 90px -30px oklch(0.28 0.01 75 / 0.36);
+}
+.hero-3d-stage .pui { box-shadow: none; }
+
+/* video inside the 3D stage — avoid overflow:hidden+radius clip on a
+   3D-transformed element (that combo renders cross-origin video as a black box).
+   Round the bar (top) and the video (bottom) individually instead. */
+.video-stage .pui { overflow: visible; border: none; border-radius: 0; background: transparent; }
+.video-stage .pui-bar {
+  border: 1px solid var(--pui-line);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--surface);
+}
+
+/* video inside the 3D stage */
+.video-stage { position: relative; }
+.hero-3d-video {
+  display: block; width: 100%; aspect-ratio: 16 / 9;
+  object-fit: cover; background: var(--paper-2);
+  border: 1px solid var(--pui-line); border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  position: relative; z-index: 1;
+  transform: translateZ(0);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.video-ph {
+  position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; gap: 8px;
+  background:
+    repeating-linear-gradient(135deg, var(--paper-2), var(--paper-2) 11px, var(--surface) 11px, var(--surface) 22px);
+  color: var(--ink-faint); font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
+  pointer-events: none;
+}
+.video-ph .vp-play {
+  width: 46px; height: 46px; border-radius: 999px; background: var(--surface);
+  border: 1px solid var(--line-strong); display: grid; place-items: center; color: var(--accent-deep);
+  box-shadow: 0 6px 18px oklch(0.3 0.01 75 / 0.12);
+}
+
+/* ground shadow under the floating panel */
+.hero-3d-floor {
+  position: absolute;
+  left: 8%; right: 8%; bottom: -7%;
+  height: 60px;
+  background: radial-gradient(60% 100% at 50% 50%, oklch(0.3 0.01 75 / 0.3), transparent 72%);
+  filter: blur(10px);
+  transform: translateZ(-60px) rotateX(70deg);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+/* floating accent cards */
+.float-card {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  box-shadow:
+    0 1px 2px oklch(0.3 0.01 75 / 0.05),
+    0 24px 48px -14px oklch(0.28 0.01 75 / 0.42);
+  transform-style: preserve-3d;
+  font-family: var(--font-display);
+  backface-visibility: hidden;
+}
+
+.fc-toast {
+  top: 11%; right: 1%;
+  transform: translateZ(85px);
+  display: flex; align-items: center; gap: 11px;
+  padding: 12px 15px 12px 12px;
+}
+.fc-toast .fc-ic {
+  width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0;
+  background: var(--accent-soft); color: var(--accent-deep);
+  display: grid; place-items: center;
+}
+.fc-toast b { display: block; font-size: 13.5px; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); }
+.fc-toast small { display: block; font-size: 11.5px; color: var(--ink-faint); font-family: var(--font-mono); margin-top: 1px; }
+
+.fc-stat {
+  bottom: 10%; left: -7%;
+  transform: translateZ(64px);
+  padding: 13px 16px;
+  min-width: 158px;
+}
+.fc-stat-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.fc-stat-top span:first-child { font-size: 12px; color: var(--ink-faint); font-weight: 500; }
+.fc-up { font-size: 13px; font-weight: 700; color: var(--accent-deep); font-family: var(--font-mono); }
+.fc-stat .fc-val { font-size: 23px; font-weight: 800; letter-spacing: -0.03em; color: var(--ink); margin-top: 2px; font-variant-numeric: tabular-nums; }
+.fc-spark { display: flex; align-items: flex-end; gap: 4px; height: 26px; margin-top: 9px; }
+.fc-spark i { flex: 1; border-radius: 3px 3px 1px 1px; background: var(--brand-soft); }
+.fc-spark i.on { background: linear-gradient(var(--accent), var(--accent-deep)); }
+
+@media (max-width: 900px) {
+  .hero-3d { perspective: none; }
+  .hero-3d-inner { transform: none !important; }
+  .hero-3d-floor { display: none; }
+  .fc-toast { right: 2%; top: 4%; transform: none; }
+  .fc-stat { left: 2%; bottom: 4%; transform: none; }
+}
+@media (max-width: 560px) {
+  .float-card { display: none; }
+}

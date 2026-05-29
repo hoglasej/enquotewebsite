@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Management — EnQuote</title>
+  <meta name="description" content="Capture and distribute leads, and keep every client record in one CRM built for renovation & service firms." />
+  <link rel="icon" type="image/png" href="assets/enquote-logo.png" />
+  <link rel="canonical" href="https://enquote.io/Customer%20Management.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EnQuote" />
+  <meta property="og:title" content="Customer Management — EnQuote" />
+  <meta property="og:description" content="Capture and distribute leads, and keep every client record in one CRM built for renovation &amp; service firms." />
+  <meta property="og:url" content="https://enquote.io/Customer%20Management.html" />
+  <meta property="og:image" content="https://enquote.io/wp-content/uploads/2025/01/1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Customer Management — EnQuote" />
+  <meta name="twitter:description" content="Capture and distribute leads, and keep every client record in one CRM built for renovation &amp; service firms." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"EnQuote","url":"https://enquote.io/","logo":"https://enquote.io/assets/enquote-logo.png","description":"The go-to ERP to scale renovation & service businesses in Singapore.","email":"hello@leaptech.sg","telephone":"+6584955583","address":{"@type":"PostalAddress","addressCountry":"SG"},"sameAs":["https://www.instagram.com/enquote_io","https://www.facebook.com/"]}</script>
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+  <link rel="stylesheet" href="styles/sections.css" />
+  <link rel="stylesheet" href="styles/pages.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="js/icons.jsx"></script>
+  <script type="text/babel" src="js/site.jsx"></script>
+  <script type="text/babel" src="js/productui.jsx"></script>
+  <script type="text/babel" src="js/featureui.jsx"></script>
+  <script type="text/babel" src="js/pages.jsx"></script>
+  <script type="text/babel">
+    function Pg() {
+      return (
+        <Page>
+          <PageHero
+            crumb={[["Services", "Services.html"], ["Customer Management"]]}
+            eyebrow="Leads & CRM"
+            title={<>Turn every enquiry into a tracked opportunity.</>}
+            sub="Leads from WhatsApp and your website land in one place, get distributed fairly across your team, and stay tied to a complete client record from first message to handover."
+            visual={<MiniWorkflow />}
+          />
+          <FeatureRow
+            eyebrow="Lead capture"
+            title="No enquiry slips through the cracks"
+            body="Every message from WhatsApp Business and your website forms is captured into EnQuote automatically — no copy-pasting, no leads lost in a busy inbox."
+            points={["WhatsApp Business & web form capture", "Auto-tagged by source and project type", "Instant notification to the right designer"]}
+            visual={<MiniLeads />}
+          />
+          <FeatureRow flip band
+            eyebrow="Fair distribution"
+            title="Distribute leads your whole team trusts"
+            body="Set the rules once and EnQuote allocates new opportunities fairly across designers — so everyone gets a fair shot and no lead sits unanswered."
+            points={["Rule-based round-robin or manual assignment", "Workload-aware allocation", "Full audit trail of who got what"]}
+            visual={<MiniAssign />}
+          />
+          <FeatureRow
+            eyebrow="One client record"
+            title="Every conversation, quote and document together"
+            body="Open a client and see the whole story — enquiries, quotes sent, approvals, project stage and documents — instead of scrolling three WhatsApp chats."
+            points={["Unified client timeline", "Linked quotes and projects", "Notes, files and approvals in one view"]}
+            visual={<MiniProjects />}
+          />
+          <FeatureGrid band eyebrow="Also included" title="Built for how ID sales really works" cols={2}
+            items={[
+              { icon: "leads", t: "Source tracking", d: "Know which channels bring your best-converting leads." },
+              { icon: "team", t: "Team performance", d: "See who's responding, quoting and closing — with KPIs." },
+              { icon: "chat", t: "Follow-up reminders", d: "Automated nudges so warm leads never go cold." },
+              { icon: "shield", t: "Data in one place", d: "No more client details scattered across personal phones." },
+            ]} />
+          <PageCTA title="Stop losing leads to a busy inbox." />
+        </Page>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Pg />);
+  </script>
+</body>
+</html>
