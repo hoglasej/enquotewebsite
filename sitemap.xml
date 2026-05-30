@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://enquote.io/</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/About%20the%20Software.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Cashflow%20Analysis.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Contact%20Us.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Customer%20Management.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Daily%20Insights.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Projects%20Document.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Request%20a%20Demo.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Resources.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Services.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://enquote.io/Tutorials.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/about-the-software.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/cashflow-analysis.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/contact-us.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/customer-management.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/daily-insights.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/projects-document.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/request-a-demo.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/resources.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/services.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://enquote.io/tutorials.html</loc><changefreq>monthly</changefreq></url>
 </urlset>

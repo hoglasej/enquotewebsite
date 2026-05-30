@@ -9,16 +9,16 @@ that serves static files.
 ## What's in this project
 
 ```
-EnQuote Landing.html        ← Home
-About the Software.html
-Services.html
-Customer Management.html
-Projects Document.html
-Cashflow Analysis.html
-Resources.html              ← Knowledge base (links to your live /docs)
-Daily Insights.html
-Contact Us.html
-Request a Demo.html
+enquote-landing.html        ← Home
+about-the-software.html
+services.html
+customer-management.html
+projects-document.html
+cashflow-analysis.html
+resources.html              ← Knowledge base (links to your live /docs)
+daily-insights.html
+contact-us.html
+request-a-demo.html
 
 styles/      ← tokens.css, sections.css, pages.css, product.css, hero3d.css, cinematic.css
 js/          ← icons, site chrome (nav/footer), product UIs, page engine, app logic (.jsx)
@@ -86,7 +86,7 @@ or want full independence, download them into `/assets` and update the reference
 - **Client logos:** `https://enquote.io/wp-content/uploads/2024/12/*-300x300.png` (in `js/sections-a.jsx`)
 - **Page hero banners:** `https://enquote.io/wp-content/uploads/2025/01/1.png … 4.png` (in `js/pages.jsx` / page files)
 - **Feature graphics:** `https://enquote.io/wp-content/uploads/2024/10/*.gif|png` (in service pages)
-- **Knowledge base links** point to your live `https://enquote.io/docs/...` tutorials (in `Resources.html`).
+- **Knowledge base links** point to your live `https://enquote.io/docs/...` tutorials (in `resources.html`).
 
 ---
 

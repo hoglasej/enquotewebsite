@@ -2,8 +2,8 @@
 // site.jsx — shared chrome: SiteNav (multi-page) + SiteFooter
 const { useState: useSiteState, useEffect: useSiteEffect } = React;
 
-const HOME = "EnQuote Landing.html";
-const DEMO = "Request a Demo.html";
+const HOME = "enquote-landing.html";
+const DEMO = "request-a-demo.html";
 const SITE_PHONE = "+65 8495 5583";
 const SITE_WA = "https://wa.me/6584955583?text=Hi%20I%20saw%20EnQuote%20and%20would%20like%20to%20request%20a%20demo.";
 const SITE_EMAIL = "hello@leaptech.sg";
@@ -22,16 +22,16 @@ function sendViaWhatsApp(data) {
 }
 
 const NAV_ITEMS = [
-  { label: "About the Software", href: "About the Software.html" },
-  { label: "Services", href: "Services.html", sub: [
-    { label: "Customer Management", href: "Customer Management.html", desc: "Leads, CRM & client records" },
-    { label: "Projects Document", href: "Projects Document.html", desc: "Digital folders & e-signatures" },
-    { label: "Cashflow Analysis", href: "Cashflow Analysis.html", desc: "Costs, purchasing & margins" },
+  { label: "About the Software", href: "about-the-software.html" },
+  { label: "Services", href: "services.html", sub: [
+    { label: "Customer Management", href: "customer-management.html", desc: "Leads, CRM & client records" },
+    { label: "Projects Document", href: "projects-document.html", desc: "Digital folders & e-signatures" },
+    { label: "Cashflow Analysis", href: "cashflow-analysis.html", desc: "Costs, purchasing & margins" },
   ] },
-  { label: "Resources", href: "Resources.html", sub: [
-    { label: "Tutorials", href: "Tutorials.html", desc: "Step-by-step how-to guides" },
-    { label: "Daily Insights", href: "Daily Insights.html", desc: "Articles for ID firms" },
-    { label: "Contact Us", href: "Contact Us.html", desc: "Talk to our team" },
+  { label: "Resources", href: "resources.html", sub: [
+    { label: "Tutorials", href: "tutorials.html", desc: "Step-by-step how-to guides" },
+    { label: "Daily Insights", href: "daily-insights.html", desc: "Articles for ID firms" },
+    { label: "Contact Us", href: "contact-us.html", desc: "Talk to our team" },
   ] },
 ];
 
@@ -98,9 +98,9 @@ function SiteNav() {
 
 function SiteFooter() {
   const cols = [
-    { h: "Product", links: [["About the Software", "About the Software.html"], ["Services", "Services.html"], ["Customer Management", "Customer Management.html"], ["Request a Demo", DEMO]] },
-    { h: "Services", links: [["Customer Management", "Customer Management.html"], ["Projects Document", "Projects Document.html"], ["Cashflow Analysis", "Cashflow Analysis.html"]] },
-    { h: "Resources", links: [["Tutorials", "Tutorials.html"], ["Resources", "Resources.html"], ["Daily Insights", "Daily Insights.html"], ["Contact Us", "Contact Us.html"]] },
+    { h: "Product", links: [["About the Software", "about-the-software.html"], ["Services", "services.html"], ["Customer Management", "customer-management.html"], ["Request a Demo", DEMO]] },
+    { h: "Services", links: [["Customer Management", "customer-management.html"], ["Projects Document", "projects-document.html"], ["Cashflow Analysis", "cashflow-analysis.html"]] },
+    { h: "Resources", links: [["Tutorials", "tutorials.html"], ["Resources", "resources.html"], ["Daily Insights", "daily-insights.html"], ["Contact Us", "contact-us.html"]] },
   ];
   return (
     <footer className="footer">
@@ -127,7 +127,7 @@ function SiteFooter() {
       </div>
       <div className="wrap footer-base">
         <span>© 2026 Leaptechnology Pte Ltd. All rights reserved.</span>
-        <div className="footer-legal"><a href="Privacy Policy.html">Privacy Policy</a><a href="Terms of Use.html">Terms of Use</a></div>
+        <div className="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-use.html">Terms of Use</a></div>
       </div>
     </footer>
   );

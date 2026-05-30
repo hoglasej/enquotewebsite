@@ -6,12 +6,12 @@
   <title>Resources — EnQuote</title>
   <meta name="description" content="Guides, daily insights and support to help Singapore renovation & service firms quote smarter and run leaner with EnQuote." />
   <link rel="icon" type="image/png" href="assets/enquote-logo.png" />
-  <link rel="canonical" href="https://enquote.io/Resources.html" />
+  <link rel="canonical" href="https://enquote.io/resources.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="EnQuote" />
   <meta property="og:title" content="Resources — EnQuote" />
   <meta property="og:description" content="Guides, daily insights and support to help Singapore renovation &amp; service firms quote smarter and run leaner with EnQuote." />
-  <meta property="og:url" content="https://enquote.io/Resources.html" />
+  <meta property="og:url" content="https://enquote.io/resources.html" />
   <meta property="og:image" content="https://enquote.io/wp-content/uploads/2025/01/1.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Resources — EnQuote" />
@@ -69,7 +69,7 @@
                   </div>
                   <div className="kb-list">
                     {c.items.map(([label, slug]) => (
-                      <a className="kb-link" href={"Tutorials.html#" + slug} key={label}>
+                      <a className="kb-link" href={"tutorials.html#" + slug} key={label}>
                         <span className="kb-doc">{Ic.doc({ size: 17 })}</span>
                         {label}
                         <span className="kb-go">{Ic.arrowUpRight({ size: 16 })}</span>
@@ -80,7 +80,7 @@
               ))}
             </div>
             <div style={{ textAlign: "center", marginTop: "2rem" }}>
-              <a className="btn btn-wa" href="Tutorials.html">Browse all tutorials {Ic.arrow({ size: 16 })}</a>
+              <a className="btn btn-wa" href="tutorials.html">Browse all tutorials {Ic.arrow({ size: 16 })}</a>
             </div>
           </div>
         </section>
@@ -99,7 +99,7 @@
               lead="Practical articles on quoting, operations and growing a service business." />
             <div className="posts" style={{ marginTop: "2.2rem" }}>
               {POSTS.map((p) => (
-                <a className="post" href="Daily Insights.html" key={p.t}>
+                <a className="post" href="daily-insights.html" key={p.t}>
                   <div className="post-thumb"><img src={p.img} alt="" /><span className="post-cat">{p.cat}</span></div>
                   <div className="post-body">
                     <h3>{p.t}</h3>
@@ -110,7 +110,7 @@
               ))}
             </div>
             <div style={{ textAlign: "center", marginTop: "2rem" }}>
-              <a className="btn btn-wa" href="Daily Insights.html">View all insights {Ic.arrow({ size: 16 })}</a>
+              <a className="btn btn-wa" href="daily-insights.html">View all insights {Ic.arrow({ size: 16 })}</a>
             </div>
           </div>
         </section>
@@ -125,7 +125,7 @@
             title={<>Everything you need to get the most out of EnQuote.</>}
             sub="Step-by-step tutorials, practical articles and hands-on support — built to help renovation & service firms quote smarter and run leaner."
             primary={{ label: "Browse tutorials", href: "#knowledge-base" }}
-            secondary={{ label: "Talk to us", href: "Contact Us.html", icon: false }}
+            secondary={{ label: "Talk to us", href: "contact-us.html", icon: false }}
           />
           <KnowledgeBase />
           <Posts />
