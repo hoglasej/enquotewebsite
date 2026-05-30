@@ -333,7 +333,7 @@ function SocialProof() {
         <div className="proof-marquee">
           <div className="proof-track">
             {[...logos, ...logos].map((src, i) => (
-              <img className="proof-logo-img" key={i} src={src} alt="" loading="lazy" />
+              <img className="proof-logo-img" key={i} src={src} alt="Client logo" loading="lazy" />
             ))}
           </div>
         </div>
